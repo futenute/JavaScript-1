@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        function getPrimes(n) {
+            let x = [];
+            let seive = [];
+            let i = 2;
+
+            while (i <= n) {
+                if (!seive[i]) {
+                    x.push(i);
+                    let j = i * 2;
+
+                    while (j <= n) {
+                        seive[j] = true;
+                        j += i;
+                    }
+                }
+                i++;
+            }
+            return x;
+        }
+
+        console.log(getPrimes(100));
+
+        
+
+    </script>
+</body>
+</html>
