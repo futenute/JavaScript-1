@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let number = +prompt("Введите число от 0 до 999");
+
+        let digit = {
+            единицы: 0,
+            десятки: 0,
+            сотни: 0,
+        };
+
+        if (number <= 9) {
+            digit.единицы = number;
+        } else if (number <= 999) {
+            digit.единицы = Math.floor(number % 10);
+            digit.десятки = Math.floor(number / 10 % 10);
+            digit.сотни = Math.floor(number / 100 % 10);
+        } else {
+            number = 0;
+            console.log("Число за пределами диапазона");
+        }
+        console.log(digit);
+    </script>
+</body>
+</html>

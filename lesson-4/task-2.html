@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        // let basket = [
+        //     {name: "iPhone", price: 999},
+        //     {name: "Honor", price: 899}
+        // ];
+
+        // function countBasketPrice(basket) {
+        //     let sum = 0;
+
+        //     for (let i = 0; i < basket.length; i++) {
+        //         sum = sum + basket[i].price;
+        //     }
+        //     return sum;
+        // }
+
+        // let totalPrice = countBasketPrice(basket);
+        // console.log(totalPrice);
+
+        let basket = {
+            items: [
+                {name: "iPhone", price: 999},
+                {name: "Honor", price: 899}
+            ],
+            countBasketPrice: function() {
+                let sum = 0;
+
+                for (let i = 0; i < this.items.length; i++) {
+                    sum += this.items[i].price;
+                }
+                return sum;
+            }
+        };
+
+        let totalPrice = basket.countBasketPrice();
+        console.log(totalPrice);
+
+    </script>
+</body>
+</html>
