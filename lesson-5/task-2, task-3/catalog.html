@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div id="catalog"></div>
+    <script src="product.js"></script>
+    <script>
+        let goods = [
+            new Product('Apple', 999), 
+            new Product('Honor', 899), 
+            new Product('DEXP', 300), 
+            new Product('Xiaomi', 799), 
+            new Product('Samsung', 1000)
+        ];
+
+        let catalog = document.querySelector('#catalog');
+
+        for (let i = 0; i < goods.length; i++) {
+            let item = document.createElement('div');
+            item.innerHTML = 'Товар: ' + goods[i].name + ' Цена: ' + goods[i].price + ' рублей';
+            catalog.appendChild(item);
+        }
+
+        console.log(catalog);
+
+
+    </script>
+</body>
+</html>
